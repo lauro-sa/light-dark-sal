@@ -1,0 +1,105 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body {
+    // Color del fondo en el body
+    background: #2b2b2b;
+
+    // hijos flexibles
+    display: flex;
+
+    // De izquierda a derecha centrados
+    justify-content: center;
+
+    // De arriba y abajo centrados
+    align-items: center;
+
+    // Que se comporte como una sola columna
+    flex-direction: column;
+
+    // La altura se adapte al tamaño del navegador
+    min-height: 100vh;
+
+    // Velocidad de animación
+    transition: 0.5s;
+    
+    // Asignamos la clase "active" para el body
+    &.active{
+        background: whitesmoke;
+    }
+}
+
+#toggle{
+
+    // fondo interno
+    background: #222;
+
+    // Cambiamos la posición a relativa
+    position: relative;
+
+    // Hacemos que se comporte como un bloque
+    display: block;
+
+    // Definimos un Ancho y un Alto
+    width: 320px;
+    height: 160px;
+
+    // Le damos un border redondo
+    border-radius: 160px;
+
+    // Velocidad de animación
+    transition: 0.5s;
+
+    // Aplicamos una sombra interna (con "inset" la sobra va para dentro.
+    box-shadow: inset 0 8px 60px rgba($color: #000000, $alpha: 1.0);
+    
+    .indicador{
+
+        // Posición absoluta porque su padre es relativo
+        position: absolute;
+
+        // Color del circulo (indicamos con "bottom" de donde queremos que comience el gradiente)
+        background: linear-gradient(to bottom, #444, #222);
+
+        // Definimos un Ancho y un Alto
+        width: 160px;
+        height: 160px;
+
+        // Posicionar a la izquierda y arriba
+        top: 0;
+        left: 0;
+
+        // Redondeamos a la mitad para que sea un circulo
+        border-radius: 50%;
+
+        // Hacer que se cambie el cursor 
+        cursor: pointer;
+
+        // Hacer que el circulo sea un poco mas pequeño
+        transform: scale(0.9);
+    
+        // Aplicamos una sombra interna (con "inset" la sobra va para dentro.
+        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5), inset 0 4px 4px rgba(255, 255, 255, 0.2), inset 0 -4px 4px rgba(255, 255, 255, 0.2);
+    
+        // Velocidad de animación
+        transition: 0.5s;
+    }
+
+    // Asignamos la clase "active" para el Indicador
+    &.active{
+        background: whitesmoke;
+        // Aplicamos una sombra interna (con "inset" la sobra va para dentro.
+        box-shadow: inset 0 8px 60px rgba($color: #dedddd, $alpha: 1.0);
+            .indicador{
+        // Colocamos un hulk para que empuje el circulo 160pc a la derecha
+        left: 160px;
+        // agregar sombras 
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1), inset 0 4px 4px rgba(255, 255, 255, 1), inset 0 -4px 4px rgba(255, 255, 255, 1);
+        // Color de fondo del circulo, gradiente
+        background: linear-gradient(to bottom, #eaeaea, #f9f9f9);
+            }
+    }
+}
